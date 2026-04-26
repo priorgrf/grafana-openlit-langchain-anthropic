@@ -9,7 +9,7 @@ load_dotenv()
 import openlit
 
 openlit.init(
-    otlp_endpoint=os.getenv("OTEL_EXPORTER_OTLP_ENDPOINT", "http://localhost:4318"),
+    otlp_endpoint=os.getenv("OTEL_EXPORTER_OTLP_ENDPOINT", "http://alloy:4318"),
     application_name=os.getenv("OPENLIT_APPLICATION_NAME", "langchain-demo"),
     environment=os.getenv("OPENLIT_ENVIRONMENT", "development"),
 )

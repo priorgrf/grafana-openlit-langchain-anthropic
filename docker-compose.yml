@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    env_file: .env
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://alloy:4318
+      PYTHONUNBUFFERED: "1"
+    depends_on:
+      - alloy
+    restart: unless-stopped
+
+  alloy:
+    image: grafana/alloy:latest
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "12345:12345"
+    volumes:
+      - ./alloy/config.alloy:/etc/alloy/config.alloy:ro
+    command: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
+    env_file: .env
+    restart: unless-stopped
