@@ -1,4 +1,4 @@
-# LangChain + Anthropic + OpenLit Observability Demo
+# LLM Observability Demo: Grafana + LangChain + Anthropic + OpenLit
 
 A demo application showing how to instrument a LangChain/Anthropic Claude app with [OpenLit](https://openlit.io/) and ship telemetry to [Grafana Cloud](https://grafana.com/products/cloud/) via [Grafana Alloy](https://grafana.com/docs/alloy/).
 
